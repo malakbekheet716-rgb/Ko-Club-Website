@@ -1,0 +1,308 @@
+================================================================================
+          KODE SPORTS CLUB — EMPLOYEE HUB: COMPLETE BEGINNER'S GUIDE
+================================================================================
+
+Welcome! This guide is written in plain, friendly language so that anyone—even 
+with zero programming or technical experience—can easily understand, launch, 
+navigate, and manage this entire project.
+
+--------------------------------------------------------------------------------
+TABLE OF CONTENTS:
+--------------------------------------------------------------------------------
+1. What is this project?
+2. How to launch and view the portal (The Easy 1-Step Way)
+3. How to stop the portal when done
+4. Complete file & folder map (What every file does in plain English)
+5. Understanding the Documentation (.md files)
+6. Understanding the Code Files (HTML, CSS, JavaScript)
+7. How the 10 Portal Modules Work
+8. Useful Features (Role Switcher, Themes, Mascot Buddy, Arabic Mode)
+9. Frequently Asked Questions (FAQ)
+
+================================================================================
+1. WHAT IS THIS PROJECT?
+================================================================================
+The "KODE Sports Club Employee Hub" is a modern, private website (an intranet portal) 
+designed exclusively for the employees, managers, and HR staff of KODE Sports Club.
+
+It allows club staff to:
+- Read daily club announcements and department news.
+- Check club event schedules and a monthly interactive calendar.
+- Access their department's private workspace and organizational chart.
+- Download club policy documents, forms, and guides (PDFs, Word docs).
+- Find internal phone numbers and contact emails for every department.
+- Submit suggestions, ideas, or problems directly to management.
+- Give peer recognition awards and points (Trophy Room gamification).
+- Manage staff accounts, departments, and system roles via an Admin Panel.
+- Enjoy an animated floating mascot companion ("KODE Buddy") as they work.
+- Switch seamlessly between English (LTR) and Arabic (RTL) with 12 color themes.
+
+================================================================================
+2. HOW TO LAUNCH AND VIEW THE PORTAL (THE EASY 1-STEP WAY)
+================================================================================
+You do NOT need to install complex programming tools, database software, or 
+type complicated terminal commands.
+
+STEP 1: Open the project folder on your computer.
+STEP 2: Double-click the file named:
+        
+        👉 start.bat
+
+WHAT HAPPENS NEXT?
+- A small black launcher window will open for a second.
+- It automatically detects your local setup and starts a lightweight local server.
+- Your default web browser (Chrome, Edge, Firefox, Brave) will open automatically to:
+  
+  🌐 http://localhost:8080/
+
+HOW TO LOG IN & SIGN UP:
+- First-time user? Click the "Sign Up (First Time)" tab to register your full name, email, department, role, and password. You'll be logged in instantly!
+- Returning employee? Sign in using your Employee ID, registered name, or email with password verification (default password: kode123).
+- Instant 1-Click Access: Click any of the quick demo chips (Malak, Ahmed, Sara, Omar) directly on the card to jump in immediately!
+
++---------------+--------------------+-------------------+-----------+-----------------+---------------------------+
+| Employee ID   | Employee Name      | Email Identifier  | Role      | Department      | Permission Level          |
++---------------+--------------------+-------------------+-----------+-----------------+---------------------------+
+| EMP001        | Malak Hussein      | malak@kode.club   | Admin     | Marketing       | Full System Access & CRUD |
+| EMP002        | Ahmed Samy         | samy@kode.club    | HR        | HR              | Staff & Dept Management   |
+| EMP003        | Sara Ali           | sara@kode.club    | Manager   | Marketing       | Award Giving & Hierarchy  |
+| EMP004        | Omar Khaled        | omar@kode.club    | Employee  | Tech            | Department Workspace      |
++---------------+--------------------+-------------------+-----------+-----------------+---------------------------+
+* Demo Password for all accounts: kode123 (or click the quick demo chips on the login card)
+
+- Click "Enter Employee Hub" (or press Enter) and you are in!
+- Once inside, you can also navigate to the "Settings" page to switch between accounts, customize themes, languages, or companions instantly.
+
+================================================================================
+3. HOW TO STOP THE PORTAL WHEN DONE
+================================================================================
+When you are finished using or demonstrating the portal:
+
+STEP 1: Double-click the file named:
+        
+        👉 stop.bat
+
+This will immediately and safely close the background server on port 8080.
+
+================================================================================
+4. COMPLETE FILE & FOLDER MAP (WHAT EVERY FILE DOES)
+================================================================================
+
+Here is an easy-to-understand breakdown of every item in this project folder:
+
+📁 .agents/
+   Contains the "AI memory" and specialized skill sets that AI assistants use 
+   when collaborating on this project.
+   * PROJECT_MEMORY.md : The central master record of all architecture decisions.
+   * skills/           : Contains specialized AI auditing tools (like language check,
+                         theme contrast checker, gesture tester).
+
+📁 assets/
+   Contains all graphics, pictures, and icons used throughout the portal.
+   * bg-nebula.png        : The deep cosmic nebula background image with glowing stars.
+   * ui-reference-new.png : Visual reference mockup for sidebar, topbar, and feed cards.
+   * mascots/             : Illustrated SVG mascot characters (dog, cat, fox, 
+                            panda, bunny, penguin, bear, bull).
+   * mascots/              : Illustrated SVG mascot characters (dog, cat, fox, 
+                             panda, bunny, penguin, bear, bull).
+
+📁 css/
+   Contains the visual styling rules that make the portal look modern and sleek.
+   * styles.css : The main stylesheet controlling colors, frosted glass effects, 
+                  card layouts, Light/Dark modes, and Arabic right-to-left layout.
+
+📁 data/
+   Optional folder used for holding sample raw data exports.
+
+📁 js/
+   Contains the "brains" and interactive logic of the portal.
+   * apiService.js : The data manager. It holds the user list, news, events, and awards.
+                     If you connect a real database later, this is the only file you edit.
+   * app.js        : The page controller. It draws the 10 screens on the screen, 
+                     manages language translation, swipe gestures, and theme switching.
+
+📄 index.html
+   The master webpage skeleton that ties everything together. It loads the fonts,
+   the stylesheet, the scripts, and holds the sidebar and topbar.
+
+📄 preview_admin.html
+   A quick standalone preview page created to test the Admin Panel layout.
+
+📄 start.bat
+   The 1-click launcher script that turns on the local server and opens your browser.
+
+📄 stop.bat
+   The 1-click script that turns off the local server.
+
+📄 README.md
+   The standard introductory documentation giving an overview of the project.
+
+📄 TEST.md
+   The official Quality Assurance & Testing Report. It proves that all 10 views, 
+   both languages (EN/AR), and both modes (Light/Dark) were tested and passed 100%.
+
+📄 RELEASE_NOTES.md
+   A summary of features, design improvements, and updates made to the portal.
+
+📄 AGENTS.md / CLAUDE.md / .cursorrules
+   Special rules and guidelines for AI programming assistants so they don't break
+   the decoupled design or overwrite important features.
+
+================================================================================
+5. UNDERSTANDING THE DOCUMENTATION (.MD FILES)
+================================================================================
+Files ending in `.md` are "Markdown" files. They are simple text documents that 
+can be read in any text editor, or viewed as nicely formatted documents with 
+bold titles, bullet points, and tables.
+
+1. PROJECT_MEMORY.md:
+   - Think of this as the "Project's Long-Term Memory".
+   - It lists every single architectural decision ever made (from Decision #1 to #20).
+   - It lists all 4 initial employee accounts, available departments, and roles.
+   - It gives developers a step-by-step guide on how to plug in a real backend database.
+
+2. TEST.md:
+   - The test report verifying that there are zero bugs or invisible texts.
+   - Confirms that Light Mode and Dark Mode work across all 10 pages.
+   - Confirms that English and Arabic translations are 100% complete.
+
+3. AGENTS.md:
+   - The "Rules of the House" for any AI coding tool.
+   - Rule 1: Always read PROJECT_MEMORY.md before writing code.
+   - Rule 2: Keep data logic in `apiService.js` and page drawing in `app.js`.
+   - Rule 3: Always support Light and Dark modes.
+
+================================================================================
+6. UNDERSTANDING THE CODE FILES (HOW THE PORTAL IS BUILT)
+================================================================================
+The portal is built using the three core building blocks of the web:
+
+1. HTML (index.html) -> The Structure
+   - Defines where the sidebar sits, where the top search bar is, where the main 
+     content area is, and where the popup windows (modals) appear.
+
+2. CSS (css/styles.css) -> The Style & Appearance
+   - Controls the "Glassmorphism" look (translucent frosted-glass cards).
+   - Defines the 19 color variables (so changing a theme changes all buttons at once).
+   - Handles the Light Mode (bright white glass) and Dark Mode (sleek cosmic dark).
+   - Handles the Arabic mode (mirrors sidebar to right, switches font to Cairo).
+
+3. JavaScript (js/app.js & js/apiService.js) -> The Behavior & Data
+   - `apiService.js`: Stores the list of users, departments, news, and events.
+   - `app.js`: When you click "Events", it grabs events from `apiService.js`, formats 
+     them into HTML cards, and displays them on the screen instantly.
+
+================================================================================
+7. HOW THE 10 PORTAL MODULES WORK
+================================================================================
+When you are logged in, the left sidebar gives you access to 10 distinct sections:
+
+1. 🏠 My KODE (Home):
+   - Features the "Daily Feed Swipe Deck".
+   - You can click "Next" or drag/swipe the main hero card horizontally to browse 
+     today's top news and club updates.
+
+2. 📰 News:
+   - Displays official club announcements and department-specific notices.
+   - Includes a "Comments" button on each news item to start discussions.
+
+3. 📅 Events & Calendar:
+   - Shows upcoming club seminars, workshops, and staff meetings.
+   - Features a clean 7-day monthly calendar showing event dates with blue dots.
+
+4. 👥 My Department:
+   - A private workspace customized to your assigned department (e.g. Marketing).
+   - Shows the department organizational chart (Managers, Team Leads, Colleagues).
+   - Includes a private "Ask Your Department" helpdesk form.
+
+5. 📁 Resources:
+   - A library of official club files: Employee Handbook, Safety Procedures, 
+     Marketing Guidelines, and Leave Request Forms.
+   - Filterable by Policies, Procedures, and Forms.
+
+6. 📇 Contacts:
+   - An internal directory to quickly find the right person or team (HR, Tech Support, 
+     Facilities, Food Safety, Security) without searching the whole organization.
+
+7. ❓ FAQs:
+   - Frequently asked questions with instant answers regarding leave, policies, 
+     and club equipment.
+
+8. 💬 Feedback:
+   - Allows employees to submit suggestions, report problems, or propose workplace 
+     improvements (with an optional "Submit anonymously" checkbox).
+   - Includes a status tracker showing which suggestions are Under Review or In Progress.
+
+9. 🏆 KODE Recognition (Trophy Room):
+   - Gamification and peer awards portal.
+   - Displays your total earned points in a prominent purple gradient banner.
+   - Managers and Admins can click "+ Grant an Award" to reward a colleague with points.
+
+10. 🛡️ Admin Panel (Admin & HR Management Hub):
+    - Visible to all users (with full editing powers for Admin & HR accounts).
+    - Top KPI cards showing live counts of Total Personnel, Active Departments, and Roles.
+    - 3 Segmented Tabs:
+      * Employees Tab: Search employees by name or email, filter by department, add new 
+        staff, and change roles/departments on the fly.
+      * Departments Tab: View all active departments and create new departments.
+      * Roles Tab: View all active system roles and create new access roles.
+
+================================================================================
+8. USEFUL FEATURES TO TRY IN THE PORTAL
+================================================================================
+
+1. 🌐 LANGUAGE TOGGLE (English / العربية):
+   - Click the "🌐 EN" button in the top bar to switch the entire portal to Arabic.
+   - The sidebar moves to the right, layout mirrors to RTL, and typography switches 
+     to the elegant Cairo Arabic font.
+
+2. 🌗 LIGHT / DARK MODE:
+   - Click the Moon (🌙) or Sun (☀️) icon in the top bar to instantly toggle 
+     between Dark Mode and Light Mode.
+
+3. 🎨 THEME PALETTE PICKER:
+   - Click the Palette (🎨) icon in the top bar to pick between 6 distinct color 
+     themes: KODE Purple, Ocean Blue, Emerald Green, Sunset Orange, Rose Pink, or Indigo.
+
+4. 🔄 SWITCH USER (Dev Tool):
+   - Click the "Switch Role" button in the top bar to quickly switch between 
+     different accounts (Malak Hussein, Ahmed Samy, Sara Ali, Omar) to test how the 
+     portal looks for different departments and permission levels.
+
+5. 🐶 KODE BUDDY MASCOT COMPANION:
+   - Look at the bottom corner of your screen! A cute floating companion is there 
+     to keep you company.
+   - Click the "Buddy" button in the bottom toolbar to choose between 8 cute pets 
+     (Dog, Cat, Fox, Panda, Bunny, Penguin, Bear, Bull).
+   - Click the pause button (Ⅱ / ▶) to freeze or unfreeze its gentle wander movement.
+   - Click "Show / hide buddy" if you want to hide it while focusing on work.
+
+================================================================================
+9. FREQUENTLY ASKED QUESTIONS (FAQ)
+================================================================================
+
+Q: Can I run this portal without an internet connection?
+A: YES! All code, scripts, mascot graphics, and mock databases live directly inside 
+   this folder. It works completely offline.
+
+Q: Do I need to install Node.js, npm, or Python?
+A: Python 3.x is recommended so `start.bat` can spin up the local server. However, 
+   even if you have neither Python nor Node, `start.bat` will automatically fall back 
+   to opening `index.html` directly in your web browser.
+
+Q: How do I share this with a colleague?
+A: Simply copy or zip the entire folder and send it to them. When they receive it, 
+   all they have to do is double-click `start.bat`.
+
+Q: Where is the data saved?
+A: In-memory and in your browser's `localStorage`. When you add a new employee or 
+   grant an award, it saves immediately to your browser session.
+
+Q: How can a software developer connect a real database later?
+A: The developer only needs to open `js/apiService.js` and replace the mock functions 
+   with real `fetch()` calls to their backend API (FastAPI, Django, Express, Node). 
+   They will NOT need to modify `js/app.js` or `index.html` at all.
+
+================================================================================
+                            END OF PROJECT GUIDE
+================================================================================

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel Design Preview - KODE Sports Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=17">
+<style>
+.admin-kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0; }
+.admin-kpi-card { background: var(--card-bg); backdrop-filter: blur(20px); border: 1px solid var(--card-border); box-shadow: var(--card-shadow); border-radius: 16px; padding: 18px 20px; display: flex; align-items: center; gap: 16px; }
+.admin-kpi-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(211, 187, 255, 0.12); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 24px; }
+.admin-kpi-info h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 4px; }
+.admin-kpi-info .val { font-size: 24px; font-weight: 800; color: var(--text-heading); }
+.admin-tabs { display: flex; gap: 8px; background: rgba(0, 0, 0, 0.25); padding: 6px; border-radius: 14px; border: 1px solid var(--card-border); margin-bottom: 20px; width: fit-content; }
+body:not(.dark) .admin-tabs { background: rgba(255, 255, 255, 0.6); }
+.admin-tab-btn { background: transparent; border: none; color: var(--text-muted); font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.2s ease; }
+.admin-tab-btn.active { background: linear-gradient(135deg, var(--theme-banner-start), var(--theme-banner-end)); color: #ffffff; box-shadow: 0 4px 12px rgba(111, 0, 190, 0.35); }
+.admin-toolbar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; justify-content: space-between; }
+.admin-search-wrap { display: flex; align-items: center; background: var(--card-bg); backdrop-filter: blur(20px); border: 1px solid var(--card-border); border-radius: 12px; padding: 0 12px; flex: 1; min-width: 240px; max-width: 420px; }
+.admin-search-wrap input { background: transparent; border: none; color: var(--text-heading); padding: 10px 8px; width: 100%; outline: none; font-size: 13px; }
+.admin-filter-select { background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-heading); padding: 8px 14px; border-radius: 12px; outline: none; font-size: 13px; cursor: pointer; }
+.admin-roster-grid { display: flex; flex-direction: column; gap: 12px; }
+.admin-user-card { background: var(--card-bg); backdrop-filter: blur(20px); border: 1px solid var(--card-border); border-radius: 16px; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; box-shadow: var(--card-shadow); }
+.admin-user-info { display: flex; align-items: center; gap: 14px; }
+.admin-user-info .u-name { font-weight: 700; color: var(--text-heading); font-size: 14px; }
+.admin-user-info .u-email { font-size: 11px; color: var(--text-muted); }
+.admin-actions { display: flex; align-items: center; gap: 10px; }
+.admin-entity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 16px; }
+.admin-entity-card { background: var(--card-bg); backdrop-filter: blur(20px); border: 1px solid var(--card-border); border-radius: 16px; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--card-shadow); }
+.preview-nav-bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; background: rgba(11, 17, 36, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); position: sticky; top: 0; z-index: 100; }
+</style>
+</head>
+<body class="dark auth-logged-in">
+<div class="app-bg" id="appBg"></div>
+
+<div class="preview-nav-bar">
+  <h2 style="color:#fff;font-size:16px;">🛡️ KODE Admin Panel &bull; Interactive Design Preview</h2>
+  <div style="display:flex;gap:10px;">
+    <button class="btn light" onclick="toggleDarkMode()">🌓 Dark/Light Mode</button>
+    <button class="btn light" onclick="toggleLanguage()">🌐 العربية / EN</button>
+    <a href="index.html" class="btn" style="background:#6d28d9;color:#fff;text-decoration:none;">⬅ Return to Main App</a>
+  </div>
+</div>
+
+<main style="max-width:1100px;margin:32px auto;padding:0 24px;">
+  <div class="admin-header">
+    <h1 class="page-title" id="adminTitle">Admin & HR Management Hub</h1>
+    <p class="sub" id="adminSub">Manage club employees, departments, access roles, and permissions in one place.</p>
+  </div>
+
+  <div class="admin-kpi-grid">
+    <div class="admin-kpi-card">
+      <div class="admin-kpi-icon"><span class="material-symbols-outlined">group</span></div>
+      <div class="admin-kpi-info">
+        <h4 id="kpiStaffTitle">Total Personnel</h4>
+        <div class="val" id="kpiStaffVal">4 Active</div>
+      </div>
+    </div>
+    <div class="admin-kpi-card">
+      <div class="admin-kpi-icon"><span class="material-symbols-outlined">apartment</span></div>
+      <div class="admin-kpi-info">
+        <h4 id="kpiDeptTitle">Active Departments</h4>
+        <div class="val" id="kpiDeptVal">7 Depts</div>
+      </div>
+    </div>
+    <div class="admin-kpi-card">
+      <div class="admin-kpi-icon"><span class="material-symbols-outlined">shield_person</span></div>
+      <div class="admin-kpi-info">
+        <h4 id="kpiRoleTitle">System Roles</h4>
+        <div class="val" id="kpiRoleVal">4 Roles</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-tabs">
+    <button class="admin-tab-btn active" id="tabEmployees" onclick="switchAdminTab('employees')">
+      <span class="material-symbols-outlined" style="font-size:18px">people</span>
+      <span id="tabEmpLabel">Employees</span>
+    </button>
+    <button class="admin-tab-btn" id="tabDepartments" onclick="switchAdminTab('departments')">
+      <span class="material-symbols-outlined" style="font-size:18px">corporate_fare</span>
+      <span id="tabDeptLabel">Departments</span>
+    </button>
+    <button class="admin-tab-btn" id="tabRoles" onclick="switchAdminTab('roles')">
+      <span class="material-symbols-outlined" style="font-size:18px">admin_panel_settings</span>
+      <span id="tabRolesLabel">Roles & Permissions</span>
+    </button>
+  </div>
+
+  <div id="sectionEmployees">
+    <div class="admin-toolbar">
+      <div class="admin-search-wrap">
+        <span class="material-symbols-outlined" style="color:var(--text-muted);font-size:20px">search</span>
+        <input type="text" id="empSearchInput" placeholder="Search by name or email..." oninput="filterEmployees()">
+      </div>
+      <div style="display:flex;gap:10px;">
+        <select class="admin-filter-select" id="empDeptFilter" onchange="filterEmployees()">
+          <option value="ALL">All Departments</option>
+          <option value="Marketing">Marketing</option>
+          <option value="HR">HR</option>
+          <option value="Tech">Tech</option>
+        </select>
+        <button class="btn" onclick="alert('Add Employee Modal with bilingual inputs!')" style="background:linear-gradient(135deg, #6d28d9, #ec4899);color:#fff;border:none;">
+          <span class="material-symbols-outlined" style="font-size:18px">person_add</span>
+          <span id="addEmpBtnText">+ Add Employee</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="admin-roster-grid">
+      <div class="admin-user-card" data-name="malak hussein" data-email="malak@kodeclub.com" data-dept="Marketing">
+        <div class="admin-user-info">
+          <div class="avatar" style="background:linear-gradient(135deg,#6d28d9,#ec4899);color:#fff;font-weight:bold;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;">MH</div>
+          <div>
+            <div class="u-name">Malak Hussein</div>
+            <div class="u-email">malak@kodeclub.com</div>
+          </div>
+        </div>
+        <div class="admin-actions">
+          <select class="admin-filter-select"><option selected>Employee</option><option>Manager</option><option>HR</option><option>Admin</option></select>
+          <select class="admin-filter-select"><option selected>Marketing</option><option>HR</option><option>Tech</option></select>
+          <button class="btn" style="background:rgba(239, 68, 68, 0.15);color:#ef4444;border:1px solid rgba(239,68,68,0.3);padding:8px 12px;border-radius:10px;">🗑️</button>
+        </div>
+      </div>
+
+      <div class="admin-user-card" data-name="ahmed samy" data-email="ahmed@kodeclub.com" data-dept="HR">
+        <div class="admin-user-info">
+          <div class="avatar" style="background:linear-gradient(135deg,#0284c7,#0d9488);color:#fff;font-weight:bold;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;">AS</div>
+          <div>
+            <div class="u-name">Ahmed Samy</div>
+            <div class="u-email">ahmed@kodeclub.com</div>
+          </div>
+        </div>
+        <div class="admin-actions">
+          <select class="admin-filter-select"><option>Employee</option><option>Manager</option><option selected>HR</option><option>Admin</option></select>
+          <select class="admin-filter-select"><option>Marketing</option><option selected>HR</option><option>Tech</option></select>
+          <button class="btn" style="background:rgba(239, 68, 68, 0.15);color:#ef4444;border:1px solid rgba(239,68,68,0.3);padding:8px 12px;border-radius:10px;">🗑️</button>
+        </div>
+      </div>
+
+      <div class="admin-user-card" data-name="sara ali" data-email="sara@kodeclub.com" data-dept="Tech">
+        <div class="admin-user-info">
+          <div class="avatar" style="background:linear-gradient(135deg,#e11d48,#fb923c);color:#fff;font-weight:bold;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;">SA</div>
+          <div>
+            <div class="u-name">Sara Ali</div>
+            <div class="u-email">sara@kodeclub.com</div>
+          </div>
+        </div>
+        <div class="admin-actions">
+          <select class="admin-filter-select"><option>Employee</option><option>Manager</option><option>HR</option><option selected>Admin</option></select>
+          <select class="admin-filter-select"><option>Marketing</option><option>HR</option><option selected>Tech</option></select>
+          <button class="btn" style="background:rgba(239, 68, 68, 0.15);color:#ef4444;border:1px solid rgba(239,68,68,0.3);padding:8px 12px;border-radius:10px;">🗑️</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sectionDepartments" style="display:none;">
+    <div class="card" style="padding:20px;margin-bottom:20px;">
+      <h3 style="margin-bottom:12px;">+ Add New Department</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <input type="text" placeholder="e.g. Aquatics & Swimming" style="flex:1;min-width:220px;padding:10px 14px;border-radius:12px;background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-heading);">
+        <button class="btn" style="background:var(--primary);color:#0B1124;font-weight:bold;">Create Department</button>
+      </div>
+    </div>
+    <div class="admin-entity-grid">
+      <div class="admin-entity-card"><div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:15px;font-weight:700;">Marketing (التسويق)</span><span class="pill primary">Active</span></div><span style="font-size:12px;color:var(--text-muted);">👥 2 Assigned Employees</span></div>
+      <div class="admin-entity-card"><div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:15px;font-weight:700;">HR (الموارد البشرية)</span><span class="pill primary">Active</span></div><span style="font-size:12px;color:var(--text-muted);">👥 1 Assigned Employee</span></div>
+      <div class="admin-entity-card"><div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:15px;font-weight:700;">Tech (تكنولوجيا المعلومات)</span><span class="pill primary">Active</span></div><span style="font-size:12px;color:var(--text-muted);">👥 1 Assigned Employee</span></div>
+    </div>
+  </div>
+
+  <div id="sectionRoles" style="display:none;">
+    <div class="card" style="padding:20px;margin-bottom:20px;">
+      <h3 style="margin-bottom:12px;">+ Add New Access Role</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <input type="text" placeholder="e.g. Head Coach, Shift Supervisor" style="flex:1;min-width:220px;padding:10px 14px;border-radius:12px;background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-heading);">
+        <button class="btn" style="background:var(--primary);color:#0B1124;font-weight:bold;">Create Role</button>
+      </div>
+    </div>
+    <div class="admin-entity-grid">
+      <div class="admin-entity-card"><div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:15px;font-weight:700;">Admin (مسؤول نظام)</span><span class="pill primary">Full Access</span></div><span style="font-size:12px;color:var(--text-muted);">👥 1 Assigned User</span></div>
+      <div class="admin-entity-card"><div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:15px;font-weight:700;">HR (مسؤول موارد بشرية)</span><span class="pill primary">HR Panel</span></div><span style="font-size:12px;color:var(--text-muted);">👥 1 Assigned User</span></div>
+      <div class="admin-entity-card"><div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:15px;font-weight:700;">Manager (مدير إدارة)</span><span class="pill primary">Team Portal</span></div><span style="font-size:12px;color:var(--text-muted);">👥 1 Assigned User</span></div>
+      <div class="admin-entity-card"><div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:15px;font-weight:700;">Employee (موظف)</span><span class="pill">Standard</span></div><span style="font-size:12px;color:var(--text-muted);">👥 1 Assigned User</span></div>
+    </div>
+  </div>
+</main>
+
+<script>
+let isArabic = false;
+function switchAdminTab(tab) {
+  document.querySelectorAll('.admin-tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.add('active');
+  document.getElementById('sectionEmployees').style.display = tab === 'employees' ? 'block' : 'none';
+  document.getElementById('sectionDepartments').style.display = tab === 'departments' ? 'block' : 'none';
+  document.getElementById('sectionRoles').style.display = tab === 'roles' ? 'block' : 'none';
+}
+function filterEmployees() {
+  const query = document.getElementById('empSearchInput').value.toLowerCase();
+  const dept = document.getElementById('empDeptFilter').value;
+  document.querySelectorAll('.admin-user-card').forEach(card => {
+    const name = card.dataset.name.toLowerCase();
+    const email = card.dataset.email.toLowerCase();
+    const cardDept = card.dataset.dept;
+    const matchQuery = name.includes(query) || email.includes(query);
+    const matchDept = dept === 'ALL' || cardDept === dept;
+    card.style.display = (matchQuery && matchDept) ? 'flex' : 'none';
+  });
+}
+function toggleDarkMode() { document.body.classList.toggle('dark'); }
+function toggleLanguage() {
+  isArabic = !isArabic;
+  document.body.classList.toggle('rtl', isArabic);
+  document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+  document.documentElement.lang = isArabic ? 'ar' : 'en';
+  if (isArabic) {
+    document.getElementById('adminTitle').innerText = 'مركز إدارة النادي والموارد البشرية';
+    document.getElementById('adminSub').innerText = 'إدارة موظفي النادي، الأقسام والإدارات، والأدوار والصلاحيات في مكان واحد.';
+    document.getElementById('kpiStaffTitle').innerText = 'إجمالي الكادر';
+    document.getElementById('kpiStaffVal').innerText = '4 نشط';
+    document.getElementById('kpiDeptTitle').innerText = 'الإدارات النشطة';
+    document.getElementById('kpiDeptVal').innerText = '7 أقسام';
+    document.getElementById('kpiRoleTitle').innerText = 'الأدوار والصلاحيات';
+    document.getElementById('kpiRoleVal').innerText = '4 أدوار';
+    document.getElementById('tabEmpLabel').innerText = 'الموظفون';
+    document.getElementById('tabDeptLabel').innerText = 'الأقسام والإدارات';
+    document.getElementById('tabRolesLabel').innerText = 'الأدوار والصلاحيات';
+    document.getElementById('empSearchInput').placeholder = 'بحث بالاسم أو البريد الإلكتروني...';
+    document.getElementById('addEmpBtnText').innerText = '+ إضافة موظف جديد';
+  } else {
+    document.getElementById('adminTitle').innerText = 'Admin & HR Management Hub';
+    document.getElementById('adminSub').innerText = 'Manage club employees, departments, access roles, and permissions in one place.';
+    document.getElementById('kpiStaffTitle').innerText = 'Total Personnel';
+    document.getElementById('kpiStaffVal').innerText = '4 Active';
+    document.getElementById('kpiDeptTitle').innerText = 'Active Departments';
+    document.getElementById('kpiDeptVal').innerText = '7 Depts';
+    document.getElementById('kpiRoleTitle').innerText = 'System Roles';
+    document.getElementById('kpiRoleVal').innerText = '4 Roles';
+    document.getElementById('tabEmpLabel').innerText = 'Employees';
+    document.getElementById('tabDeptLabel').innerText = 'Departments';
+    document.getElementById('tabRolesLabel').innerText = 'Roles & Permissions';
+    document.getElementById('empSearchInput').placeholder = 'Search by name or email...';
+    document.getElementById('addEmpBtnText').innerText = '+ Add Employee';
+  }
+}
+</script>
+</body>
+</html>
