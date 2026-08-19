@@ -973,14 +973,15 @@ async function settingsPage() {
           <button class="theme-mode-choice ${!dark?'active':''}" onclick="if(dark)toggleAppearance()">${arabic ? '☼ المظهر الفاتح' : '☼ Light Mode'}</button>
           <button class="theme-mode-choice ${dark?'active':''}" onclick="if(!dark)toggleAppearance()">${arabic ? '☾ المظهر الداكن' : '☾ Dark Mode'}</button>
         </div>
-        <div style="font-size:12px;font-weight:700;color:var(--text-heading);margin-bottom:10px;">${t('themeOption')}</div>
         <div class="theme-picker">
-          <button class="theme-choice ${currentTheme==='default'?'active':''}" data-theme="default" onclick="setTheme('default')"><span class="theme-dot dot-default"></span>KODE Purple</button>
-          <button class="theme-choice ${currentTheme==='ocean'?'active':''}" data-theme="ocean" onclick="setTheme('ocean')"><span class="theme-dot dot-ocean"></span>Ocean Blue</button>
-          <button class="theme-choice ${currentTheme==='emerald'?'active':''}" data-theme="emerald" onclick="setTheme('emerald')"><span class="theme-dot dot-emerald"></span>Emerald</button>
-          <button class="theme-choice ${currentTheme==='sunset'?'active':''}" data-theme="sunset" onclick="setTheme('sunset')"><span class="theme-dot dot-sunset"></span>Sunset Orange</button>
-          <button class="theme-choice ${currentTheme==='rose'?'active':''}" data-theme="rose" onclick="setTheme('rose')"><span class="theme-dot dot-rose"></span>Rose Pink</button>
-          <button class="theme-choice ${currentTheme==='indigo'?'active':''}" data-theme="indigo" onclick="setTheme('indigo')"><span class="theme-dot dot-indigo"></span>Indigo Neon</button>
+          <button class="theme-choice ${currentTheme==='default'?'active':''}" data-theme="default" onclick="setTheme('default')"><span class="theme-dot dot-default"></span>${arabic ? 'بنفسجي كود (الأساسي)' : 'KODE Violet'}</button>
+          <button class="theme-choice ${currentTheme==='magenta'?'active':''}" data-theme="magenta" onclick="setTheme('magenta')"><span class="theme-dot dot-magenta"></span>${arabic ? 'ماجنتا كود (#ed0c6e)' : 'KODE Magenta'}</button>
+          <button class="theme-choice ${currentTheme==='royal'?'active':''}" data-theme="royal" onclick="setTheme('royal')"><span class="theme-dot dot-royal"></span>${arabic ? 'أزرق كود (#244ea2)' : 'KODE Royal Blue'}</button>
+          <button class="theme-choice ${currentTheme==='gold'?'active':''}" data-theme="gold" onclick="setTheme('gold')"><span class="theme-dot dot-gold"></span>${arabic ? 'ذهبي كود (#fec20e)' : 'KODE Vibrant Gold'}</button>
+          <button class="theme-choice ${currentTheme==='orange'?'active':''}" data-theme="orange" onclick="setTheme('orange')"><span class="theme-dot dot-orange"></span>${arabic ? 'برتقالي الشعلة (#f26522)' : 'KODE Flame Orange'}</button>
+          <button class="theme-choice ${currentTheme==='lime'?'active':''}" data-theme="lime" onclick="setTheme('lime')"><span class="theme-dot dot-lime"></span>${arabic ? 'ليموني نيون (#bfd730)' : 'KODE Citron Lime'}</button>
+          <button class="theme-choice ${currentTheme==='cyber'?'active':''}" data-theme="cyber" onclick="setTheme('cyber')"><span class="theme-dot dot-cyber"></span>${arabic ? 'سايبر (ماجنتا وأزرق)' : 'Cyber Pink & Blue'}</button>
+          <button class="theme-choice ${currentTheme==='electric'?'active':''}" data-theme="electric" onclick="setTheme('electric')"><span class="theme-dot dot-electric"></span>${arabic ? 'إليكتريك (ليموني وبنفسجي)' : 'Electric Lime & Violet'}</button>
         </div>
       </div>
 
@@ -1658,12 +1659,19 @@ function bindFeedSwipe() {
 // MODULE 7: THEME ENGINE, BACKGROUND MODES & LANGUAGE
 // =========================================================
 const themeNames = {
-  default: 'KODE Purple',
-  ocean: 'Ocean',
-  emerald: 'Emerald',
-  sunset: 'Sunset',
-  rose: 'Rose',
-  indigo: 'Indigo'
+  default: 'KODE Violet',
+  magenta: 'KODE Magenta',
+  royal: 'KODE Royal Blue',
+  gold: 'KODE Vibrant Gold',
+  orange: 'KODE Flame Orange',
+  lime: 'KODE Citron Lime',
+  cyber: 'Cyber (Pink & Blue)',
+  electric: 'Electric (Lime & Violet)',
+  ocean: 'KODE Royal Blue',
+  emerald: 'KODE Citron Lime',
+  sunset: 'KODE Flame Orange',
+  rose: 'KODE Magenta',
+  indigo: 'Cyber Pink & Blue'
 };
 
 let bgMode = localStorage.getItem('kode-bg-mode') || 'galaxy';

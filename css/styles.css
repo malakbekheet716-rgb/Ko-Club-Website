@@ -7,12 +7,12 @@
    1. DESIGN TOKENS & CSS CUSTOM PROPERTIES (12 STATES)
    ========================================================= */
 :root {
-    /* Base Color Tokens */
-    --theme-accent: #7c3aed;
-    --theme-accent-light: rgba(124, 58, 237, 0.12);
-    --theme-accent-glow: rgba(124, 58, 237, 0.35);
-    --theme-banner-start: #7c3aed;
-    --theme-banner-end: #a855f7;
+    /* Base Color Tokens — KODE Brand Violet (#7f3f98) & Magenta (#ed0c6e) */
+    --theme-accent: #7f3f98;
+    --theme-accent-light: rgba(127, 63, 152, 0.12);
+    --theme-accent-glow: rgba(127, 63, 152, 0.35);
+    --theme-banner-start: #7f3f98;
+    --theme-banner-end: #ed0c6e;
 
     /* Light Mode Default Surface & Glass */
     --card-bg: rgba(255, 255, 255, 0.78);
@@ -33,11 +33,11 @@
 
 /* Base Dark Mode */
 body.dark {
-    --theme-accent: #a78bfa;
-    --theme-accent-light: rgba(167, 139, 250, 0.18);
-    --theme-accent-glow: rgba(167, 139, 250, 0.65);
-    --theme-banner-start: #6d28d9;
-    --theme-banner-end: #7c3aed;
+    --theme-accent: #a855f7;
+    --theme-accent-light: rgba(168, 85, 247, 0.18);
+    --theme-accent-glow: rgba(168, 85, 247, 0.65);
+    --theme-banner-start: #7f3f98;
+    --theme-banner-end: #ed0c6e;
     --card-bg: rgba(17, 24, 46, 0.65);
     --card-border: rgba(255, 255, 255, 0.13);
     --card-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
@@ -54,134 +54,186 @@ body.dark {
     --app-bg-overlay: linear-gradient(rgba(11, 17, 36, 0.20), rgba(11, 17, 36, 0.30));
 }
 
-/* --- 1. OCEAN PALETTE --- */
-body[data-theme="ocean"] {
-    --theme-accent: #0284c7;
-    --theme-accent-light: rgba(2, 132, 199, 0.12);
-    --theme-accent-glow: rgba(2, 132, 199, 0.35);
-    --theme-banner-start: #0284c7;
-    --theme-banner-end: #0ea5e9;
-    --sidebar-bg: #062133;
-    --sidebar-brand: #38bdf8;
-    --sidebar-active-bg: rgba(56, 189, 248, 0.14);
-    --sidebar-active-text: #38bdf8;
-    --app-bg-overlay: linear-gradient(rgba(240, 249, 255, 0.45), rgba(224, 242, 254, 0.55));
-}
-body.dark[data-theme="ocean"] {
-    --theme-accent: #38bdf8;
-    --theme-accent-light: rgba(56, 189, 248, 0.18);
-    --theme-accent-glow: rgba(56, 189, 248, 0.65);
-    --theme-banner-start: #0369a1;
-    --theme-banner-end: #0284c7;
-    --sidebar-bg: #041624;
-    --sidebar-brand: #38bdf8;
-    --sidebar-active-bg: rgba(56, 189, 248, 0.14);
-    --sidebar-active-text: #38bdf8;
-    --app-bg-overlay: linear-gradient(rgba(4, 22, 36, 0.35), rgba(6, 33, 51, 0.45));
-}
-
-/* --- 2. EMERALD PALETTE --- */
-body[data-theme="emerald"] {
-    --theme-accent: #059669;
-    --theme-accent-light: rgba(5, 150, 105, 0.12);
-    --theme-accent-glow: rgba(5, 150, 105, 0.35);
-    --theme-banner-start: #059669;
-    --theme-banner-end: #10b981;
-    --sidebar-bg: #06261c;
-    --sidebar-brand: #34d399;
-    --sidebar-active-bg: rgba(52, 211, 153, 0.14);
-    --sidebar-active-text: #34d399;
-    --app-bg-overlay: linear-gradient(rgba(240, 253, 244, 0.45), rgba(209, 250, 229, 0.55));
-}
-body.dark[data-theme="emerald"] {
-    --theme-accent: #34d399;
-    --theme-accent-light: rgba(52, 211, 153, 0.18);
-    --theme-accent-glow: rgba(52, 211, 153, 0.65);
-    --theme-banner-start: #047857;
-    --theme-banner-end: #059669;
-    --sidebar-bg: #031711;
-    --sidebar-brand: #34d399;
-    --sidebar-active-bg: rgba(52, 211, 153, 0.14);
-    --sidebar-active-text: #34d399;
-    --app-bg-overlay: linear-gradient(rgba(3, 23, 17, 0.35), rgba(6, 38, 28, 0.45));
-}
-
-/* --- 3. SUNSET PALETTE --- */
-body[data-theme="sunset"] {
-    --theme-accent: #ea580c;
-    --theme-accent-light: rgba(234, 88, 12, 0.12);
-    --theme-accent-glow: rgba(234, 88, 12, 0.35);
-    --theme-banner-start: #ea580c;
-    --theme-banner-end: #f97316;
-    --sidebar-bg: #28140e;
-    --sidebar-brand: #fb923c;
-    --sidebar-active-bg: rgba(251, 146, 60, 0.14);
-    --sidebar-active-text: #fb923c;
-    --app-bg-overlay: linear-gradient(rgba(255, 247, 237, 0.45), rgba(254, 215, 170, 0.55));
-}
-body.dark[data-theme="sunset"] {
-    --theme-accent: #fb923c;
-    --theme-accent-light: rgba(251, 146, 60, 0.18);
-    --theme-accent-glow: rgba(251, 146, 60, 0.65);
-    --theme-banner-start: #c2410c;
-    --theme-banner-end: #ea580c;
-    --sidebar-bg: #1a0c08;
-    --sidebar-brand: #fb923c;
-    --sidebar-active-bg: rgba(251, 146, 60, 0.14);
-    --sidebar-active-text: #fb923c;
-    --app-bg-overlay: linear-gradient(rgba(26, 12, 8, 0.35), rgba(40, 20, 14, 0.45));
-}
-
-/* --- 4. ROSE PALETTE --- */
-body[data-theme="rose"] {
-    --theme-accent: #db2777;
-    --theme-accent-light: rgba(219, 39, 119, 0.12);
-    --theme-accent-glow: rgba(219, 39, 119, 0.35);
-    --theme-banner-start: #db2777;
-    --theme-banner-end: #ec4899;
-    --sidebar-bg: #260d1f;
+/* --- 1. KODE MAGENTA PALETTE (#ed0c6e / RGB 237,12,110) --- */
+body[data-theme="magenta"], body[data-theme="rose"] {
+    --theme-accent: #ed0c6e;
+    --theme-accent-light: rgba(237, 12, 110, 0.12);
+    --theme-accent-glow: rgba(237, 12, 110, 0.38);
+    --theme-banner-start: #ed0c6e;
+    --theme-banner-end: #244ea2;
+    --sidebar-bg: #1e0514;
     --sidebar-brand: #f472b6;
-    --sidebar-active-bg: rgba(244, 114, 182, 0.14);
-    --sidebar-active-text: #f472b6;
+    --sidebar-active-bg: rgba(237, 12, 110, 0.18);
+    --sidebar-active-text: #ffffff;
     --app-bg-overlay: linear-gradient(rgba(253, 242, 248, 0.45), rgba(252, 231, 243, 0.55));
 }
-body.dark[data-theme="rose"] {
-    --theme-accent: #f472b6;
-    --theme-accent-light: rgba(244, 114, 182, 0.18);
-    --theme-accent-glow: rgba(244, 114, 182, 0.65);
-    --theme-banner-start: #be185d;
-    --theme-banner-end: #db2777;
-    --sidebar-bg: #170712;
-    --sidebar-brand: #f472b6;
-    --sidebar-active-bg: rgba(244, 114, 182, 0.14);
-    --sidebar-active-text: #f472b6;
-    --app-bg-overlay: linear-gradient(rgba(23, 7, 18, 0.35), rgba(38, 13, 31, 0.45));
+body.dark[data-theme="magenta"], body.dark[data-theme="rose"] {
+    --theme-accent: #f43f5e;
+    --theme-accent-light: rgba(244, 63, 94, 0.20);
+    --theme-accent-glow: rgba(237, 12, 110, 0.70);
+    --theme-banner-start: #ed0c6e;
+    --theme-banner-end: #244ea2;
+    --sidebar-bg: #14030d;
+    --sidebar-brand: #fda4af;
+    --sidebar-active-bg: rgba(237, 12, 110, 0.20);
+    --sidebar-active-text: #ffffff;
+    --app-bg-overlay: linear-gradient(rgba(20, 3, 13, 0.35), rgba(35, 6, 24, 0.45));
 }
 
-/* --- 5. INDIGO PALETTE --- */
-body[data-theme="indigo"] {
-    --theme-accent: #4f46e5;
-    --theme-accent-light: rgba(79, 70, 229, 0.12);
-    --theme-accent-glow: rgba(79, 70, 229, 0.35);
-    --theme-banner-start: #4f46e5;
-    --theme-banner-end: #6366f1;
-    --sidebar-bg: #0e1533;
-    --sidebar-brand: #818cf8;
-    --sidebar-active-bg: rgba(129, 140, 248, 0.14);
-    --sidebar-active-text: #818cf8;
-    --app-bg-overlay: linear-gradient(rgba(238, 242, 255, 0.45), rgba(224, 231, 255, 0.55));
+/* --- 2. KODE ROYAL BLUE PALETTE (#244ea2 / RGB 0,114,188) --- */
+body[data-theme="royal"], body[data-theme="ocean"] {
+    --theme-accent: #244ea2;
+    --theme-accent-light: rgba(36, 78, 162, 0.12);
+    --theme-accent-glow: rgba(36, 78, 162, 0.35);
+    --theme-banner-start: #244ea2;
+    --theme-banner-end: #fec20e;
+    --sidebar-bg: #07152e;
+    --sidebar-brand: #60a5fa;
+    --sidebar-active-bg: rgba(36, 78, 162, 0.18);
+    --sidebar-active-text: #ffffff;
+    --app-bg-overlay: linear-gradient(rgba(240, 249, 255, 0.45), rgba(224, 242, 254, 0.55));
 }
-body.dark[data-theme="indigo"] {
-    --theme-accent: #818cf8;
-    --theme-accent-light: rgba(129, 140, 248, 0.18);
-    --theme-accent-glow: rgba(129, 140, 248, 0.65);
-    --theme-banner-start: #4338ca;
-    --theme-banner-end: #4f46e5;
-    --sidebar-bg: #090e21;
-    --sidebar-brand: #818cf8;
-    --sidebar-active-bg: rgba(129, 140, 248, 0.14);
-    --sidebar-active-text: #818cf8;
-    --app-bg-overlay: linear-gradient(rgba(9, 14, 33, 0.35), rgba(14, 21, 51, 0.45));
+body.dark[data-theme="royal"], body.dark[data-theme="ocean"] {
+    --theme-accent: #38bdf8;
+    --theme-accent-light: rgba(56, 189, 248, 0.18);
+    --theme-accent-glow: rgba(36, 78, 162, 0.75);
+    --theme-banner-start: #244ea2;
+    --theme-banner-end: #fec20e;
+    --sidebar-bg: #050d1e;
+    --sidebar-brand: #93c5fd;
+    --sidebar-active-bg: rgba(56, 189, 248, 0.16);
+    --sidebar-active-text: #ffffff;
+    --app-bg-overlay: linear-gradient(rgba(5, 13, 30, 0.35), rgba(7, 21, 46, 0.45));
+}
+
+/* --- 3. KODE VIBRANT GOLD PALETTE (#fec20e / RGB 254,194,15) --- */
+body[data-theme="gold"] {
+    --theme-accent: #d97706;
+    --theme-accent-light: rgba(254, 194, 14, 0.16);
+    --theme-accent-glow: rgba(254, 194, 14, 0.45);
+    --theme-banner-start: #f59e0b;
+    --theme-banner-end: #fec20e;
+    --sidebar-bg: #1f1402;
+    --sidebar-brand: #fde047;
+    --sidebar-active-bg: rgba(254, 194, 14, 0.20);
+    --sidebar-active-text: #ffffff;
+    --app-bg-overlay: linear-gradient(rgba(254, 252, 232, 0.45), rgba(254, 240, 138, 0.55));
+}
+body.dark[data-theme="gold"] {
+    --theme-accent: #fec20e;
+    --theme-accent-light: rgba(254, 194, 14, 0.20);
+    --theme-accent-glow: rgba(254, 194, 14, 0.75);
+    --theme-banner-start: #b45309;
+    --theme-banner-end: #fec20e;
+    --sidebar-bg: #140d02;
+    --sidebar-brand: #fef08a;
+    --sidebar-active-bg: rgba(254, 194, 14, 0.20);
+    --sidebar-active-text: #ffffff;
+    --app-bg-overlay: linear-gradient(rgba(20, 13, 2, 0.35), rgba(31, 20, 2, 0.45));
+}
+
+/* --- 4. KODE ENERGY FLAME ORANGE (#f26522 / RGB 242,101,34) --- */
+body[data-theme="orange"], body[data-theme="sunset"] {
+    --theme-accent: #ea580c;
+    --theme-accent-light: rgba(242, 101, 34, 0.12);
+    --theme-accent-glow: rgba(242, 101, 34, 0.38);
+    --theme-banner-start: #f26522;
+    --theme-banner-end: #bfd730;
+    --sidebar-bg: #220f06;
+    --sidebar-brand: #fb923c;
+    --sidebar-active-bg: rgba(242, 101, 34, 0.18);
+    --sidebar-active-text: #ffffff;
+    --app-bg-overlay: linear-gradient(rgba(255, 247, 237, 0.45), rgba(254, 215, 170, 0.55));
+}
+body.dark[data-theme="orange"], body.dark[data-theme="sunset"] {
+    --theme-accent: #fb923c;
+    --theme-accent-light: rgba(251, 146, 60, 0.18);
+    --theme-accent-glow: rgba(242, 101, 34, 0.70);
+    --theme-banner-start: #f26522;
+    --theme-banner-end: #bfd730;
+    --sidebar-bg: #170903;
+    --sidebar-brand: #fdba74;
+    --sidebar-active-bg: rgba(242, 101, 34, 0.20);
+    --sidebar-active-text: #ffffff;
+    --app-bg-overlay: linear-gradient(rgba(23, 9, 3, 0.35), rgba(34, 15, 6, 0.45));
+}
+
+/* --- 5. KODE CITRON LIME GREEN (#bfd730 / RGB 191,215,48) --- */
+body[data-theme="lime"], body[data-theme="emerald"] {
+    --theme-accent: #65a30d;
+    --theme-accent-light: rgba(191, 215, 48, 0.16);
+    --theme-accent-glow: rgba(191, 215, 48, 0.40);
+    --theme-banner-start: #65a30d;
+    --theme-banner-end: #bfd730;
+    --sidebar-bg: #111a04;
+    --sidebar-brand: #bef264;
+    --sidebar-active-bg: rgba(191, 215, 48, 0.20);
+    --sidebar-active-text: #ffffff;
+    --app-bg-overlay: linear-gradient(rgba(247, 254, 231, 0.45), rgba(217, 249, 157, 0.55));
+}
+body.dark[data-theme="lime"], body.dark[data-theme="emerald"] {
+    --theme-accent: #bef264;
+    --theme-accent-light: rgba(191, 215, 48, 0.20);
+    --theme-accent-glow: rgba(191, 215, 48, 0.70);
+    --theme-banner-start: #3f6212;
+    --theme-banner-end: #bfd730;
+    --sidebar-bg: #0b1102;
+    --sidebar-brand: #d9f99d;
+    --sidebar-active-bg: rgba(191, 215, 48, 0.20);
+    --sidebar-active-text: #ffffff;
+    --app-bg-overlay: linear-gradient(rgba(11, 17, 2, 0.35), rgba(17, 26, 4, 0.45));
+}
+
+/* --- 6. KODE CYBER COMBO (Magenta #ed0c6e & Royal Blue #244ea2) --- */
+body[data-theme="cyber"], body[data-theme="indigo"] {
+    --theme-accent: #ed0c6e;
+    --theme-accent-light: rgba(237, 12, 110, 0.14);
+    --theme-accent-glow: rgba(36, 78, 162, 0.55);
+    --theme-banner-start: #ed0c6e;
+    --theme-banner-end: #244ea2;
+    --sidebar-bg: #0d0822;
+    --sidebar-brand: #f472b6;
+    --sidebar-active-bg: linear-gradient(90deg, rgba(237, 12, 110, 0.25), rgba(36, 78, 162, 0.25));
+    --sidebar-active-text: #ffffff;
+    --app-bg-overlay: linear-gradient(rgba(240, 240, 255, 0.45), rgba(254, 230, 245, 0.55));
+}
+body.dark[data-theme="cyber"], body.dark[data-theme="indigo"] {
+    --theme-accent: #f43f5e;
+    --theme-accent-light: rgba(244, 63, 94, 0.20);
+    --theme-accent-glow: rgba(36, 78, 162, 0.85);
+    --theme-banner-start: #ed0c6e;
+    --theme-banner-end: #244ea2;
+    --sidebar-bg: #090518;
+    --sidebar-brand: #60a5fa;
+    --sidebar-active-bg: linear-gradient(90deg, rgba(237, 12, 110, 0.25), rgba(36, 78, 162, 0.25));
+    --sidebar-active-text: #ffffff;
+    --app-bg-overlay: linear-gradient(rgba(9, 5, 24, 0.35), rgba(13, 8, 34, 0.45));
+}
+
+/* --- 7. KODE ELECTRIC COMBO (Citron Lime #bfd730 & Violet #7f3f98) --- */
+body[data-theme="electric"] {
+    --theme-accent: #7f3f98;
+    --theme-accent-light: rgba(191, 215, 48, 0.18);
+    --theme-accent-glow: rgba(127, 63, 152, 0.45);
+    --theme-banner-start: #7f3f98;
+    --theme-banner-end: #bfd730;
+    --sidebar-bg: #140922;
+    --sidebar-brand: #bef264;
+    --sidebar-active-bg: linear-gradient(90deg, rgba(127, 63, 152, 0.25), rgba(191, 215, 48, 0.25));
+    --sidebar-active-text: #ffffff;
+    --app-bg-overlay: linear-gradient(rgba(250, 245, 255, 0.45), rgba(247, 254, 231, 0.55));
+}
+body.dark[data-theme="electric"] {
+    --theme-accent: #bef264;
+    --theme-accent-light: rgba(191, 215, 48, 0.22);
+    --theme-accent-glow: rgba(127, 63, 152, 0.85);
+    --theme-banner-start: #7f3f98;
+    --theme-banner-end: #bfd730;
+    --sidebar-bg: #0e0517;
+    --sidebar-brand: #d8b4fe;
+    --sidebar-active-bg: linear-gradient(90deg, rgba(127, 63, 152, 0.25), rgba(191, 215, 48, 0.25));
+    --sidebar-active-text: #ffffff;
+    --app-bg-overlay: linear-gradient(rgba(14, 5, 23, 0.35), rgba(20, 9, 34, 0.45));
 }
 
 /* =========================================================
@@ -242,79 +294,113 @@ body[data-bg-mode="crystal"] .app-bg {
    CLEAN / MINIMALIST THEME BACKGROUNDS (THEME MATCHED)
    ========================================================= */
 
-/* 1. Default (KODE Purple) */
+/* 1. Default (KODE Violet #7f3f98 & Magenta #ed0c6e) */
 body[data-bg-mode="clean"] .app-bg,
 body:not([data-theme])[data-bg-mode="clean"] .app-bg,
 body[data-theme="default"][data-bg-mode="clean"] .app-bg {
     background-image: none !important;
-    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 40%, #e0e7ff 100%) !important;
+    background: linear-gradient(135deg, #fbf7ff 0%, #f3e8ff 40%, #ede9fe 100%) !important;
     display: block !important;
 }
 body.dark[data-bg-mode="clean"] .app-bg,
 body.dark:not([data-theme])[data-bg-mode="clean"] .app-bg,
 body.dark[data-theme="default"][data-bg-mode="clean"] .app-bg {
     background-image: none !important;
-    background: radial-gradient(ellipse at 75% 25%, #2e1065 0%, #170936 50%, #090314 100%) !important;
+    background: radial-gradient(ellipse at 75% 25%, #3b0764 0%, #1e0538 50%, #090212 100%) !important;
     display: block !important;
 }
 
-/* 2. Ocean Blue */
+/* 2. KODE Magenta (#ed0c6e) */
+body[data-theme="magenta"][data-bg-mode="clean"] .app-bg,
+body[data-theme="rose"][data-bg-mode="clean"] .app-bg {
+    background-image: none !important;
+    background: linear-gradient(135deg, #fff1f5 0%, #ffe4ec 45%, #fecddc 100%) !important;
+    display: block !important;
+}
+body.dark[data-theme="magenta"][data-bg-mode="clean"] .app-bg,
+body.dark[data-theme="rose"][data-bg-mode="clean"] .app-bg {
+    background-image: none !important;
+    background: radial-gradient(ellipse at 75% 25%, #881337 0%, #4c0519 50%, #150207 100%) !important;
+    display: block !important;
+}
+
+/* 3. KODE Royal Blue (#244ea2) */
+body[data-theme="royal"][data-bg-mode="clean"] .app-bg,
 body[data-theme="ocean"][data-bg-mode="clean"] .app-bg {
     background-image: none !important;
-    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 45%, #bae6fd 100%) !important;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 45%, #bfdbfe 100%) !important;
     display: block !important;
 }
+body.dark[data-theme="royal"][data-bg-mode="clean"] .app-bg,
 body.dark[data-theme="ocean"][data-bg-mode="clean"] .app-bg {
     background-image: none !important;
-    background: radial-gradient(ellipse at 75% 25%, #0369a1 0%, #082f49 50%, #02111c 100%) !important;
+    background: radial-gradient(ellipse at 75% 25%, #1e3a8a 0%, #0f172a 50%, #030712 100%) !important;
     display: block !important;
 }
 
-/* 3. Emerald Green */
-body[data-theme="emerald"][data-bg-mode="clean"] .app-bg {
+/* 4. KODE Vibrant Gold (#fec20e) */
+body[data-theme="gold"][data-bg-mode="clean"] .app-bg {
     background-image: none !important;
-    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 45%, #bbf7d0 100%) !important;
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 45%, #fde68a 100%) !important;
     display: block !important;
 }
-body.dark[data-theme="emerald"][data-bg-mode="clean"] .app-bg {
+body.dark[data-theme="gold"][data-bg-mode="clean"] .app-bg {
     background-image: none !important;
-    background: radial-gradient(ellipse at 75% 25%, #047857 0%, #064e3b 50%, #021712 100%) !important;
+    background: radial-gradient(ellipse at 75% 25%, #78350f 0%, #451a03 50%, #1a0801 100%) !important;
     display: block !important;
 }
 
-/* 4. Sunset Orange */
+/* 5. KODE Flame Orange (#f26522) */
+body[data-theme="orange"][data-bg-mode="clean"] .app-bg,
 body[data-theme="sunset"][data-bg-mode="clean"] .app-bg {
     background-image: none !important;
     background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 45%, #fed7aa 100%) !important;
     display: block !important;
 }
+body.dark[data-theme="orange"][data-bg-mode="clean"] .app-bg,
 body.dark[data-theme="sunset"][data-bg-mode="clean"] .app-bg {
     background-image: none !important;
-    background: radial-gradient(ellipse at 75% 25%, #c2410c 0%, #431407 50%, #1a0802 100%) !important;
+    background: radial-gradient(ellipse at 75% 25%, #7c2d12 0%, #431407 50%, #180501 100%) !important;
     display: block !important;
 }
 
-/* 5. Rose Pink */
-body[data-theme="rose"][data-bg-mode="clean"] .app-bg {
+/* 6. KODE Citron Lime (#bfd730) */
+body[data-theme="lime"][data-bg-mode="clean"] .app-bg,
+body[data-theme="emerald"][data-bg-mode="clean"] .app-bg {
     background-image: none !important;
-    background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 45%, #fecdd3 100%) !important;
+    background: linear-gradient(135deg, #f7fee7 0%, #ecfccb 45%, #d9f99d 100%) !important;
     display: block !important;
 }
-body.dark[data-theme="rose"][data-bg-mode="clean"] .app-bg {
+body.dark[data-theme="lime"][data-bg-mode="clean"] .app-bg,
+body.dark[data-theme="emerald"][data-bg-mode="clean"] .app-bg {
     background-image: none !important;
-    background: radial-gradient(ellipse at 75% 25%, #be185d 0%, #500724 50%, #1d020c 100%) !important;
+    background: radial-gradient(ellipse at 75% 25%, #365314 0%, #1a2e05 50%, #091201 100%) !important;
     display: block !important;
 }
 
-/* 6. Indigo Neon */
+/* 7. KODE Cyber (Magenta & Royal) */
+body[data-theme="cyber"][data-bg-mode="clean"] .app-bg,
 body[data-theme="indigo"][data-bg-mode="clean"] .app-bg {
     background-image: none !important;
-    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 45%, #c7d2fe 100%) !important;
+    background: linear-gradient(135deg, #fdf2f8 0%, #ede9fe 50%, #e0f2fe 100%) !important;
     display: block !important;
 }
+body.dark[data-theme="cyber"][data-bg-mode="clean"] .app-bg,
 body.dark[data-theme="indigo"][data-bg-mode="clean"] .app-bg {
     background-image: none !important;
-    background: radial-gradient(ellipse at 75% 25%, #4338ca 0%, #1e1b4b 50%, #090826 100%) !important;
+    background: radial-gradient(ellipse at 80% 20%, #4a044e 0%, #172554 50%, #030712 100%) !important;
+    display: block !important;
+}
+
+/* 8. KODE Electric (Lime & Violet) */
+body[data-theme="electric"][data-bg-mode="clean"] .app-bg {
+    background-image: none !important;
+    background: linear-gradient(135deg, #faf5ff 0%, #f7fee7 50%, #ede9fe 100%) !important;
+    display: block !important;
+}
+body.dark[data-theme="electric"][data-bg-mode="clean"] .app-bg {
+    background-image: none !important;
+    background: radial-gradient(ellipse at 80% 20%, #2e1065 0%, #14532d 50%, #020617 100%) !important;
     display: block !important;
 }
 
@@ -378,16 +464,16 @@ body.auth-logged-in #mainApp {
     gap: 14px;
 }
 .login-brand .logo {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: 12px;
-    background: linear-gradient(135deg, var(--theme-banner-start), var(--theme-banner-end));
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     display: grid;
     place-items: center;
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: 900;
+    padding: 6px;
     box-shadow: 0 8px 20px var(--theme-accent-glow);
+    flex-shrink: 0;
 }
 .login-brand h2 {
     font-size: 22px;
@@ -654,17 +740,37 @@ body:not(.dark) .login-input-wrap select option {
     background: none;
 }
 .brand-logo-icon {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #ffffff, #c4b5fd);
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     display: grid;
     place-items: center;
-    color: #0b0614;
-    font-size: 22px;
-    font-weight: 900;
-    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
+    padding: 5px;
+    box-shadow: 0 4px 14px var(--theme-accent-glow);
     flex-shrink: 0;
+    transition: all 0.25s ease;
+}
+.k-brand-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 2px 8px var(--theme-accent-glow));
+    transition: transform 0.2s ease;
+}
+.brand:hover .k-brand-logo-img,
+.login-brand:hover .k-brand-logo-img {
+    transform: scale(1.08);
+}
+.tm-badge {
+    font-size: 9px;
+    vertical-align: super;
+    font-weight: 800;
+    margin-left: 2px;
+    opacity: 0.8;
+    letter-spacing: 0.05em;
 }
 .brand-title {
     display: flex;
@@ -1817,42 +1923,14 @@ body.rtl .top-user {
     height: 14px;
     border-radius: 50%;
 }
-.dot-default { background: #7c3aed; }
-.dot-ocean { background: #0284c7; }
-.dot-emerald { background: #059669; }
-.dot-sunset { background: #ea580c; }
-.dot-rose { background: #db2777; }
-.dot-indigo { background: #4f46e5; }
-
-/* Mascot Picker */
-.pet-picker {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin: 16px 0;
-}
-.pet-option {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    padding: 12px 8px;
-    border-radius: 12px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    color: var(--text-heading);
-    font-size: 11px;
-    font-weight: 700;
-}
-.pet-option img {
-    width: 44px;
-    height: 44px;
-    object-fit: contain;
-}
-.pet-option.active {
-    border-color: var(--theme-accent);
-    background: var(--theme-accent-light);
-}
+.dot-default { background: linear-gradient(135deg, #7f3f98, #ed0c6e); }
+.dot-magenta, .dot-rose { background: #ed0c6e; }
+.dot-royal, .dot-ocean { background: #244ea2; }
+.dot-gold { background: #fec20e; }
+.dot-orange, .dot-sunset { background: #f26522; }
+.dot-lime, .dot-emerald { background: #bfd730; }
+.dot-cyber, .dot-indigo { background: linear-gradient(135deg, #ed0c6e, #244ea2); }
+.dot-electric { background: linear-gradient(135deg, #bfd730, #7f3f98); }
 
 /* =========================================================
    9. ARABIC RTL LOCALIZATION & RESPONSIVE BREAKPOINTS
